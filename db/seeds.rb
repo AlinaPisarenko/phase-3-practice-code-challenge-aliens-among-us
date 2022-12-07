@@ -1,5 +1,4 @@
 puts "Creating seeds..."
-
 Alien.destroy_all
 Earthling.destroy_all
 Visitation.destroy_all
@@ -13,7 +12,7 @@ Alien.create(name: "Korniand", earth_disguise_name: "Starfire", home_planet: "Ta
 end
 
 25.times do
-  Visitation.create(date: Date.new, alien_id: Alien.all.sample.id, earthling_id: Earthling.all.sample.id)
+  Visitation.create(date: Faker::Date.between(from: '1200-09-23', to: '2022-09-25'), alien_id: Alien.all.sample.id, earthling_id: Earthling.all.sample.id)
 end
 
 puts "Seeding completed!"
